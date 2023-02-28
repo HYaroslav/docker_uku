@@ -2,29 +2,29 @@ version: '1'
 services:
   app1:
     build: .
-    image: uku_docker_task_6_image
+    image: uku_docker_task_7_image
     ports:
       - 8080:8080
     environment:
       - PORT=8080
       - ANOTHER_APP_ADDRESS=http://172.30.0.3:8081
     networks:
-      uku_docker_task_6:
+      uku_docker_task_7:
         ipv4_address: 172.30.0.2
   app2:
     build: .
-    image: uku_docker_task_6_image
+    image: uku_docker_task_7_image
     ports:
       - 8081:8081
     environment:
       - PORT=8081
       - ANOTHER_APP_ADDRESS=http://172.30.0.2:8080
     networks:
-      uku_docker_task_6:
+      uku_docker_task_7:
         ipv4_address: 172.30.0.3
 networks:
-  uku_docker_task_6:
-    name: uku_docker_task_6_network
+  uku_docker_task_7:
+    name: uku_docker_task_7_network
     ipam:
       config:
         - subnet: 172.30.0.0/16
